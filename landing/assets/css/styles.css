@@ -125,6 +125,28 @@ a {
   width: 100%;
 }
 
+.btn[aria-disabled="true"],
+.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---------- Setup banner (only shown while WhatsApp isn't configured) ---------- */
+.config-banner {
+  background-color: #7a1f1f;
+  color: #ffe9e9;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.65rem 1rem;
+}
+
+.config-banner code {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;

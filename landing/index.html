@@ -37,6 +37,11 @@
 
   <a href="#main-content" class="sr-only skip-link">Saltar al contenido principal</a>
 
+  <div class="config-banner" data-config-banner hidden role="status">
+    ⚠️ Configuración pendiente: definí <code>WHATSAPP_NUMBER</code> en
+    <code>assets/js/main.js</code> para activar los botones de WhatsApp.
+  </div>
+
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="#inicio">
@@ -264,7 +269,12 @@
         <span>YEIX</span>
       </div>
       <p>Tecnología que transforma ideas.</p>
-      <p>&copy; <span data-current-year>2026</span> YEIX. Todos los derechos reservados.</p>
+      <p>
+        &copy;
+        <!-- Static fallback year for no-JS contexts; assets/js/main.js
+             overwrites this with the current year on load. -->
+        <span data-current-year>2026</span> YEIX. Todos los derechos reservados.
+      </p>
     </div>
   </footer>
 

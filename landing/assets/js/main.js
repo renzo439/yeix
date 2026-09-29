@@ -39,8 +39,12 @@
     }
 
     // Avoid sending visitors to a broken wa.me link while the number
-    // hasn't been configured yet: keep the link inert instead.
+    // hasn't been configured yet: keep the link inert instead. The
+    // href stays "#" (safe no-op) and tabindex is removed so keyboard
+    // users can't focus/activate it before JS has run.
     link.setAttribute("aria-disabled", "true");
+    link.setAttribute("tabindex", "-1");
+    link.classList.add("is-disabled");
     link.setAttribute(
       "title",
       "WhatsApp aún no está configurado. Definí WHATSAPP_NUMBER en assets/js/main.js."
@@ -49,6 +53,13 @@
       event.preventDefault();
     });
   });
+
+  if (!isConfigured) {
+    var configBanner = document.querySelector("[data-config-banner]");
+    if (configBanner) {
+      configBanner.hidden = false;
+    }
+  }
 
   /**
    * Mobile navigation toggle.

@@ -19,7 +19,7 @@
     property="og:description"
     content="Soporte técnico, diseño web, e-commerce y chatbots de WhatsApp. Contactanos por WhatsApp y recibí tu cotización sin cargo."
   />
-  <meta property="og:image" content="assets/img/yeix-logo.png" />
+  <meta property="og:image" content="https://yeix.com.ar/landing/assets/img/yeix-logo.png" />
   <meta name="twitter:card" content="summary" />
 
   <link rel="icon" href="assets/img/yeix-logo.png" type="image/png" />
@@ -29,9 +29,10 @@
   <!--
     WhatsApp configuration
     -----------------------------------------------------------------
-    Replace WHATSAPP_NUMBER below with the real YEIX WhatsApp number
-    (international format, digits only, e.g. 5491122334455) wherever
-    it appears in this file's wa.me links before publishing the site.
+    Links marked with [data-whatsapp-link] are built dynamically by
+    assets/js/main.js. To go live, edit ONLY the constants at the top
+    of that file: WHATSAPP_NUMBER (international format, digits only,
+    e.g. "5491122334455") and WHATSAPP_MESSAGES (the prefilled texts).
   -->
 
   <a href="#main-content" class="sr-only">Saltar al contenido principal</a>
@@ -70,7 +71,9 @@
         </ul>
         <a
           class="btn btn-primary main-nav__cta"
-          href="https://wa.me/WHATSAPP_NUMBER?text=Hola%20YEIX%2C%20quiero%20recibir%20informaci%C3%B3n%20y%20una%20cotizaci%C3%B3n."
+          href="#"
+          data-whatsapp-link
+          data-whatsapp-message="general"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -96,7 +99,9 @@
           <div class="hero__actions">
             <a
               class="btn btn-primary"
-              href="https://wa.me/WHATSAPP_NUMBER?text=Hola%20YEIX%2C%20quiero%20informaci%C3%B3n%20y%20una%20cotizaci%C3%B3n%20sobre%20sus%20servicios."
+              href="#"
+              data-whatsapp-link
+              data-whatsapp-message="services"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -229,7 +234,9 @@
         <div class="contact__actions">
           <a
             class="btn btn-primary"
-            href="https://wa.me/WHATSAPP_NUMBER?text=Hola%20YEIX%2C%20quiero%20recibir%20informaci%C3%B3n%20y%20una%20cotizaci%C3%B3n."
+            href="#"
+            data-whatsapp-link
+            data-whatsapp-message="general"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -263,7 +270,9 @@
 
   <a
     class="whatsapp-float"
-    href="https://wa.me/WHATSAPP_NUMBER?text=Hola%20YEIX%2C%20quiero%20recibir%20informaci%C3%B3n%20y%20una%20cotizaci%C3%B3n."
+    href="#"
+    data-whatsapp-link
+    data-whatsapp-message="general"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Escribinos por WhatsApp"

@@ -19,7 +19,9 @@
     services: "Hola YEIX, quiero información y una cotización sobre sus servicios."
   };
 
-  if (WHATSAPP_NUMBER === "WHATSAPP_NUMBER") {
+  var isConfigured = WHATSAPP_NUMBER !== "WHATSAPP_NUMBER";
+
+  if (!isConfigured) {
     // eslint-disable-next-line no-console
     console.warn(
       "YEIX: WHATSAPP_NUMBER is still a placeholder in assets/js/main.js. " +
@@ -30,7 +32,22 @@
   document.querySelectorAll("[data-whatsapp-link]").forEach(function (link) {
     var messageKey = link.getAttribute("data-whatsapp-message") || "general";
     var message = WHATSAPP_MESSAGES[messageKey] || WHATSAPP_MESSAGES.general;
-    link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+
+    if (isConfigured) {
+      link.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      return;
+    }
+
+    // Avoid sending visitors to a broken wa.me link while the number
+    // hasn't been configured yet: keep the link inert instead.
+    link.setAttribute("aria-disabled", "true");
+    link.setAttribute(
+      "title",
+      "WhatsApp aún no está configurado. Definí WHATSAPP_NUMBER en assets/js/main.js."
+    );
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
   });
 
   /**

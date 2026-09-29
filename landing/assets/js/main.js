@@ -12,6 +12,10 @@
    * Every element marked [data-whatsapp-link] in index.html gets its
    * href built from these constants automatically, so there is only
    * one place to update before publishing.
+   *
+   * Note: like any wa.me link, this number is sent to every visitor's
+   * browser and is publicly visible in the page source — this is not
+   * a secret and should never hold sensitive credentials.
    */
   var WHATSAPP_NUMBER = "";
   var WHATSAPP_MESSAGES = {

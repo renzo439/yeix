@@ -272,7 +272,9 @@
       <p>
         &copy;
         <!-- Static fallback year for no-JS contexts; assets/js/main.js
-             overwrites this with the current year on load. -->
+             overwrites this with the current year on load. Update this
+             fallback value if the site is ever expected to run for long
+             periods without JavaScript enabled. -->
         <span data-current-year>2026</span> YEIX. Todos los derechos reservados.
       </p>
     </div>
@@ -290,6 +292,6 @@
     <span aria-hidden="true">💬</span>
   </a>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

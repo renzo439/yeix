@@ -1,0 +1,23 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Dependencias
+node_modules/
+vendor/
+
+# Variables de entorno
+.env
+.env.local
+
+# Logs
+*.log
+
+# Archivos temporales/editor
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# XAMPP / archivos de prueba comunes
+cgi-bin/

@@ -13,13 +13,13 @@
    * href built from these constants automatically, so there is only
    * one place to update before publishing.
    */
-  var WHATSAPP_NUMBER = "WHATSAPP_NUMBER";
+  var WHATSAPP_NUMBER = "";
   var WHATSAPP_MESSAGES = {
     general: "Hola YEIX, quiero recibir información y una cotización.",
     services: "Hola YEIX, quiero información y una cotización sobre sus servicios."
   };
 
-  var isConfigured = WHATSAPP_NUMBER !== "WHATSAPP_NUMBER";
+  var isConfigured = WHATSAPP_NUMBER !== "";
 
   if (!isConfigured) {
     // eslint-disable-next-line no-console
